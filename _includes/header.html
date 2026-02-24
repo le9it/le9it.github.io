@@ -17,30 +17,11 @@
         </label>
 
         <div class="trigger">
-<!--   <a class="page-link" href="{{ '/' | relative_url }}">Home</a> -->
-<!--  <a class="page-link" href="{{ '/archive#games' | relative_url }}">Gaming</a>
-  <a class="page-link" href="{{ '/archive#software' | relative_url }}">Software</a>
-  <a class="page-link" href="{{ '/archive#hardware' | relative_url }}">Hardware</a>
-  <a class="page-link" href="{{ '/archive#tinkering' | relative_url }}">Tinkering</a>
+
   <a class="page-link" href="{{ '/about' | relative_url }}">About</a>
-  <a class="page-link" href="{{ '/archive' | relative_url }}">Archive</a>-->
-<!--   <a class="page-link" href="{{ '/guestbook' | relative_url }}">Guestbook</a> -->
+
 </div>
 
-
-
-<!--<div class="trigger">
-  <a class="page-link" href="{{ '/archive#games' | relative_url }}">Game Reviews</a>
-  <a class="page-link" href="{{ '/archive#art' | relative_url }}">Art</a>
-  <a class="page-link" href="{{ '/guestbook' | relative_url }}">Guestbook</a>
-
-  {%- for path in page_paths -%}
-    {%- assign my_page = site.pages | where: "path", path | first -%}
-    {%- if my_page.title -%}
-    <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
-    {%- endif -%}
-  {%- endfor -%}
-</div>-->
       </nav>
     {%- endif -%}
   </div>
@@ -48,21 +29,20 @@
 
 
 <style>
-  /* 1. Make the header and footer backgrounds go edge-to-edge */
+
   .site-header, .site-footer {
     width: 100%;
     max-width: 100% !important;
-    padding: 0 20px; /* Gives a little breathing room on the sides */
+    padding: 0 20px;
   }
 
-  /* 2. Keep the main page content centered and narrow */
-  /* This ensures your "Welcome to the Hub" text doesn't hit the screen edges */
+
   main.page-content .wrapper {
     max-width: 800px !important;
     margin: 0 auto;
   }
 
-  /* 3. Make the header internal wrapper wide */
+
   .site-header .wrapper {
     max-width: 95% !important;
     margin: 0 auto;
