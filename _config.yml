@@ -18,6 +18,13 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
+# Current Status Variables
+currently_playing: "Dark Souls 3"
+playing_platform: "PC"
+currently_watching: "Frieren, JJK S3, Oshi no Ko S3"
+current_project: "Polishing this personal website + writing a post about esp32"
+mood: "Wrist is injured, can't play, write, nor code too much or it will start to hurt:("
+
 title: The Tinkering Corner
 email: hatdz.nedjah@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
@@ -26,6 +33,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: jekyllrb
 github_username:  le9it
+backloggd_username: le9it
 
 # Build settings
 theme: minima

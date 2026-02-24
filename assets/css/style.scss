@@ -1,0 +1,48 @@
+---
+---
+@import "minima";
+
+// --- 1. DEFINE OUR COLORS ---
+:root {
+    --bg-color: #111111;
+    --text-color: #e0e0e0;
+    --panel-bg: #1a1a1a;
+    --border-color: #333;
+    --link-color: #3498db;
+}
+
+body.light-mode {
+    --bg-color: #ffffff;
+    --text-color: #111111;
+    --panel-bg: #f4f4f4;
+    --border-color: #ddd;
+    --link-color: #0056b3;
+}
+
+// --- 2. APPLY TO MINIMA ELEMENTS ---
+body {
+    background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
+}
+
+.site-header, .site-footer {
+    background-color: var(--bg-color) !important;
+    border-color: var(--border-color) !important;
+}
+
+.site-title, .site-nav .page-link, a {
+    color: var(--link-color) !important;
+}
+
+.wrapper {
+    background-color: transparent !important;
+}
+
+// This ensures your Hub panels change too
+.panel {
+    background-color: var(--panel-bg) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-color) !important;
+}
+
+

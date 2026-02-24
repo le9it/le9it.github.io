@@ -1,0 +1,146 @@
+<footer class="site-footer h-card">
+  <data class="u-url" href="{{ "/" | relative_url }}"></data>
+
+  <div class="wrapper">
+    <h2 class="footer-heading">{{ site.title | escape }}</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">
+            {%- if site.author -%}{{ site.author | escape }}{%- else -%}{{ site.title | escape }}{%- endif -%}
+          </li>
+          {%- if site.email -%}
+            <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+          {%- endif -%}
+
+          <li>{%- include social.html -%}</li>
+
+          {%- if site.backloggd_username -%}
+<li>
+  <a href="https://www.backloggd.com/u/{{ site.backloggd_username }}" target="_blank" rel="noopener" style="display: flex; align-items: center;">
+    <img src="https://external-content.duckduckgo.com/ip3/backloggd.com.ico"
+         alt="Backloggd"
+         style="width: 16px; height: 16px; margin-right: 8px; filter: saturate(1.5);">
+    <span class="username">Backloggd</span>
+  </a>
+</li>
+{%- endif -%}
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        </div>
+
+      <div class="footer-col footer-col-3">
+        <p>{{- site.description | escape -}}</p>
+      </div>
+    </div>
+  </div>
+
+  <button id="theme-toggle" class="theme-switch">
+    <span id="theme-icon">🌙</span>
+  </button>
+</footer>
+
+<style>
+  /* --- 1. LAYOUT & STRUCTURE --- */
+  .site-footer {
+    border-top: 1px solid var(--border-color);
+    padding: 30px 0;
+    width: 100%;
+  }
+
+  .site-footer .wrapper {
+    max-width: 95% !important;
+    margin: 0 auto;
+  }
+
+  .footer-col-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0 !important;
+  }
+
+  .footer-col {
+    flex: 1;
+    padding-left: 0 !important;
+  }
+
+  .footer-col-3 { text-align: right; }
+  .contact-list { list-style: none; margin-left: 0; }
+
+  /* --- 2. THEME VARIABLES --- */
+  :root {
+    --bg-color: #111111;
+    --text-color: #e0e0e0;
+    --panel-bg: #1a1a1a;
+    --border-color: #333;
+    --link-color: #3498db;
+  }
+
+  body.light-mode {
+    --bg-color: #ffffff;
+    --text-color: #111111;
+    --panel-bg: #f4f4f4;
+    --border-color: #ddd;
+    --link-color: #0056b3;
+  }
+
+  /* --- 3. GLOBAL APPLICATIONS --- */
+  body {
+    background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
+  }
+
+  .site-header, .site-footer {
+    background-color: var(--bg-color) !important;
+    border-color: var(--border-color) !important;
+  }
+
+  .panel {
+    background-color: var(--panel-bg) !important;
+    border-color: var(--border-color) !important;
+  }
+
+  a, .site-title { color: var(--link-color) !important; }
+
+  /* --- 4. TOGGLE BUTTON DESIGN --- */
+  .theme-switch {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    border-radius: 50px;
+    border: 1px solid var(--border-color);
+    background: var(--panel-bg);
+    color: var(--text-color);
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+</style>
+
+<script>
+  const toggleBtn = document.getElementById('theme-toggle');
+  const icon = document.getElementById('theme-icon');
+  const body = document.body;
+
+  // Check for saved preference
+  if (localStorage.getItem('theme') === 'light') {
+    body.classList.add('light-mode');
+    icon.innerText = '☀️';
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    body.classList.toggle('light-mode');
+
+    if (body.classList.contains('light-mode')) {
+      localStorage.setItem('theme', 'light');
+      icon.innerText = '☀️';
+    } else {
+      localStorage.setItem('theme', 'dark');
+      icon.innerText = '🌙';
+    }
+  });
+</script>
