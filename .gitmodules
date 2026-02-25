@@ -1,3 +1,4 @@
 [submodule "_posts"]
 	path = _posts
 	url = https://github.com/le9it/blog-posts.git
+	shallow = true
