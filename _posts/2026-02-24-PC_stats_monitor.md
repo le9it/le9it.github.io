@@ -30,7 +30,7 @@ Thankfully, CPU and RAM data are obtainable very easily using [psutil](https://p
 
 After days of digging through the system files, the internet, and reading a bit of the code of [amdgpu_top](https://github.com/Umio-Yasuno/amdgpu_top), i was finally able to find that the file at __"/sys/class/drm/card1/device/gpu_metrics"__ describes, as per the name, the metrics of the GPU, including temperature, horray, problem solve- WRONG, sure we've found where the data we need is, but it's just a bunch of bytes in a file, how am i supposed to know which bytes describes which metric? well, i got lucky and found [this](https://gist.github.com/leuc/e45f4dc64dc1db870e4bad1c436228bb) absolute gem, literally exactly what i needed
 
-![amdgpu_top result](/assets/images/amdgpu_top.jpg)
+![amdgpu_top result](/assets/images/amdgpu_top.png)
 
 
 after running amdgpu_top and finding out that my GPU uses the __v1.3__ map, i made a small python code that gets all the needed data and sends it (very inefficiently, might i add) to the ESP32, then i uploaded a code to the ESP32 that expects the exact format i sent and displays it on the OLED, voila, it's done
